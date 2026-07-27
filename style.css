@@ -9,7 +9,6 @@ main {
     overflow-x: hidden;
     background: #111;
     width: 100vh;
-    position: relative;
     height: auto;
 }
 
@@ -41,7 +40,7 @@ main {
 .left-controls {
     position: fixed;
     left: 20px;
-    top: 450px;
+    top: 420px;
     display: flex;
     flex-direction: column;
     object-fit: contain;
@@ -88,7 +87,7 @@ main {
 
 }
 
-.bottom-sheet {
+/* .bottom-sheet {
     position: fixed;
 
     bottom: 0;
@@ -133,4 +132,4 @@ main {
 
     font-weight: bold;
 
-}
+} */

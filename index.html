@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>.</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -76,7 +77,7 @@
         </div>
 
         <!--  Bottom Sheet -->
-        <div class="bottom-sheet">
+        <!-- <div class="bottom-sheet">
 
             <div class="time">
                 <h2 style="padding-bottom: 3px;">1 min</h2>
@@ -101,7 +102,90 @@
                 Arrived
             </button>
 
+        </div> -->
+
+
+
+
+
+
+
+           <footer class="w-full text-white fixed bottom-0 left-0 bg-gray-900 z-10">
+      <div class="flex justify-between items-center px-4 pt-4 pb-2.5">
+        <div class="flex justify-center items-center">
+          <i class="fa-solid size-4 fa-angle-left"></i
+          ><span class="one-min">1 min</span>
         </div>
+
+        <i class="fa-solid fa-list kebab menu"></i>
+
+      </div>
+
+      <span class="left-side text-size pad-left"
+        >Domestic Flight Terminal, Abuja</span
+      >
+      <br />
+      <span class="left-side text-size pad-left"
+        >Nnamdi Azikiwe Airport (ABV)</span
+      >
+      <p class="py-2 text-size first-rider pad-left">Onyebuchi</p>
+      <p class="p-1 my-3 pr-2 text-white rounded-lg size-fit ml-4 pad-left">
+        <span class="naira my-2 line-through text-xl">N</span>
+        <span class="text-size"
+          ><span class="price-container">14,032.98</span> Net, tax incl.</span
+        >
+      </p>
+
+      <div
+        class="flex justify-between items-center bg-green-700 py-3.5 px-4 w-[99%] rounded-lg mb-2 mx-auto"
+      >
+        <i class="fa-solid fa-angles-right text-white"></i>
+        <p class="text-white arrived">Arrived</p>
+        <p class="pr-4"></p>
+      </div>
+    </footer>
+
+    <div
+      class="subMenu popup text-white fixed bottom-0 w-full left-0 z-20 h-0 duration-500 transition-all bg-black"
+    >
+      <div class="flex justify-between items-center p-4">
+        <p class="text-2xl">Route details</p>
+
+        <div
+          class="closeSubMenu size-8 grid place-content-center rounded-full bg-gray-500 p-2"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+
+      <div class="pl-4">
+        <div class="flex justify-start py-3 items-center">
+          <i class="fa-solid fa-user"></i>
+          <span class="pl-2"
+            >Contact <span class="seceond-rider">Onyebuchi</span></span
+          >
+        </div>
+
+        <div class="flex justify-start py-3 items-center">
+          <i class="fa-solid fa-location-arrow"></i>
+          <span class="pl-2">Set default navigation</span>
+        </div>
+        <div class="flex justify-start py-3 items-center text-red-600">
+          <i class="fa-solid fa-xmark"></i>
+          <span class="pl-2">Cancel ride</span>
+        </div>
+      </div>
+
+      <div class="grid place-items-center py-5">
+        <div
+          class="flex justify-center size-fit rounded-lg p-1 mb-4 bg-gray-600 items-center"
+        >
+          <i class="fa-solid fa-hand"></i>
+          <span class="pl-2">Stop new requests</span>
+        </div>
+      </div>
+    </div>
+    <script src="Jscript/app.js"></script>
 
         <script src="./script.js"></script>
 
