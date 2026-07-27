@@ -9,6 +9,8 @@ main {
     overflow-x: hidden;
     background: #111;
     width: 100vh;
+    position: relative;
+    height: auto;
 }
 
 #map {
@@ -39,7 +41,7 @@ main {
 .left-controls {
     position: fixed;
     left: 20px;
-    top: 450px;
+    top: 600px;
     display: flex;
     flex-direction: column;
     object-fit: contain;
