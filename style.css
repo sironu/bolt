@@ -9,7 +9,7 @@ main {
     overflow-x: hidden;
     background: #111;
     width: 100vh;
-    position: relative;
+    /* position: relative; */
     height: auto;
 }
 
@@ -59,7 +59,7 @@ main {
     border: none;
     outline: none;
     border-radius: 100%;
-    object-fit: contain;
+    object-fit: cover;
     background: transparent;
 
 
