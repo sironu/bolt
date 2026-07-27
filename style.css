@@ -8,6 +8,7 @@
 main {
     overflow: hidden;
     background: #111;
+    width: 100vh;
 }
 
 #map {
@@ -43,43 +44,42 @@ main {
     flex-direction: column;
     gap: 15px;
     z-index: 10;
+    background: transparent;
 
 }
 
-/* .left-controls button,
+.left-controls button,
 .right-controls button {
 
     cursor: pointer;
     background: transparent;
     border: none;
     outline: none;
-    width: 40px;
-    height: 40px;
-    margin: 1rem;
-
-} */
-.left-controls button img,
-.right-controls button img {
-
-    cursor: pointer;
     background: transparent;
-    border: none;
-    outline: none;
-    width: 35px;
-    height: 35px;
-    margin: 1rem;
 
+
+   
+
+}
+.img_right{
+    border-radius: 100%; 
+    
+}
+.img_left{
+    border-radius: 100%; 
+    
 }
 
 .right-controls {
     position: absolute;
    
-    right: 20px;
+    right: 25px;
     top: 250px;
-
+    object-fit: contain;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
+    background: transparent;
 
     z-index: 10;
 
