@@ -37,14 +37,14 @@ main {
 
 
 .left-controls {
-    position: absolute;
+    position: fixed;
     left: 20px;
     top: 330px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     z-index: 10;
-    background: transparent;
+   
 
 }
 
@@ -52,10 +52,9 @@ main {
 .right-controls button {
 
     cursor: pointer;
-    background: transparent;
     border: none;
     outline: none;
-    background: transparent;
+
 
 
    
@@ -71,15 +70,15 @@ main {
 }
 
 .right-controls {
-    position: absolute;
+    position: fixed;
    
-    right: 25px;
+    right: 0px;
     top: 250px;
     object-fit: contain;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    background: transparent;
+    gap: 10px;
+
 
     z-index: 10;
 
