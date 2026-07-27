@@ -9,7 +9,7 @@ main {
     overflow-x: hidden;
     background: #111;
     width: 100vh;
-    /* position: relative; */
+    position: relative;
     height: auto;
 }
 
@@ -41,7 +41,7 @@ main {
 .left-controls {
     position: fixed;
     left: 20px;
-    top: 600px;
+    top: 450px;
     display: flex;
     flex-direction: column;
     object-fit: contain;
