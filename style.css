@@ -6,7 +6,7 @@
 }
 
 main {
-    overflow: hidden;
+    overflow-x: hidden;
     background: #111;
     width: 100vh;
 }
@@ -44,6 +44,7 @@ main {
     flex-direction: column;
     gap: 15px;
     z-index: 10;
+    background: transparent;
    
 
 }
@@ -54,30 +55,28 @@ main {
     cursor: pointer;
     border: none;
     outline: none;
+    background: transparent;
 
 
 
    
 
 }
-.img_right{
+.img_right, .img_left{
     border-radius: 100%; 
     
 }
-.img_left{
-    border-radius: 100%; 
-    
-}
+
 
 .right-controls {
     position: fixed;
-   
-    right: 0px;
+   background: transparent;
+    right: 10px;
     top: 250px;
     object-fit: contain;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 
 
     z-index: 10;
