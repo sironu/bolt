@@ -74,7 +74,7 @@ body {
 }
 
 .bottom-sheet {
-    position: absolute;
+    position: fixed;
 
     bottom: 0;
 
