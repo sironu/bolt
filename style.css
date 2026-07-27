@@ -39,7 +39,7 @@ main {
 .left-controls {
     position: fixed;
     left: 20px;
-    top: 330px;
+    top: 450px;
     display: flex;
     flex-direction: column;
     object-fit: contain;
