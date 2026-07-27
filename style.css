@@ -53,10 +53,10 @@ main {
     background: transparent;
     border: none;
     outline: none;
-    width: 48px;
-    height: 48px;
-    margin-right:1rem;
-    margin-bottom: 1rem;
+    width: 40px;
+    height: 40px;
+    margin:1rem;
+    
 }
 
 .right-controls {
@@ -67,7 +67,7 @@ main {
 
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    /* gap: 15px; */
 
     z-index: 10;
 
