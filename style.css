@@ -127,7 +127,6 @@ img {
     box-shadow: 0 -0.25rem 0.94rem rgba(0, 0, 0, .15);
 }
 
-
 .trip-top {
     display: flex;
     align-items: flex-start;
@@ -175,7 +174,6 @@ img {
 .driver-rating {
     color: #ffc11b;
     font-weight: 700;
-    /* margin-left: 4px; */
 }
 
 .fare {
@@ -183,11 +181,11 @@ img {
     margin-top: 0.8rem;
     padding: 0.5rem 0.7rem;
     border-radius: 0.625rem;
-    background: #3b4657;
+    background: #323760;
     font-size: 0.8rem;
     font-weight: 600;
     white-space: nowrap;
-    color: white;
+    color: rgba(135, 207, 235, 0.664);
 }
 
 
@@ -211,25 +209,8 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.6rem;
-    /* position: relative;
-    cursor: pointer; */
+    padding: 0.9rem;
 }
-
-/* .arrived-arrow {
-    position: absolute;
-    left: 25px;
-    top: 27px;
-    font-size: 1.5rem;
-    line-height: 2.1rem;
-    font-weight: 300;
-} */
-
-
-
-/* .arrived:active {
-    transform: scale(.99);
-} */
 
 /* =========================================================
    ANDROID HOME INDICATOR
