@@ -82,9 +82,15 @@ main {
 }
 .map{
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 .map,img{
     width: 100%;
+
 }
 /* =========================================================
    BOTTOM TRIP PANEL
