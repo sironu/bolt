@@ -1,6 +1,32 @@
 const menu = document.querySelector(".menu");
+const recenter = document.querySelector(".recenter");
+const changeState = document.querySelectorAll(".changeState");
 const subMenu = document.querySelector(".subMenu");
 const close = document.querySelector(".closeSubMenu");
+recenter.classList.add('none')
+
+onscroll = () => {
+  for (const data of changeState) {
+    data.classList.add("none")
+  }
+  recenter.classList.remove('none')
+ 
+};
+
+setInterval(() => {
+  block()
+  recenter.classList.add('none')
+
+}, 4000);
+
+
+function block() {
+   for (const data of changeState) {
+    data.classList.remove("none")
+  }
+ 
+}
+recenter.addEventListener("click", block)
 
 menu.addEventListener("click", () => {
   subMenu.classList.toggle("h-72");
@@ -49,14 +75,14 @@ priceContainers.innerHTML = prices[Math.floor(Math.random() * prices.length)];
 
 
 function getName() {
- let disapear = document.querySelector(".disapear");
+  let disapear = document.querySelector(".disapear");
 
-if (scrollY > 150 ) {
-  
-  disapear.classList.add("hidden");
-}else{
-disapear.classList.remove("hidden");
-}
+  if (scrollY > 150) {
+
+    disapear.classList.add("hidden");
+  } else {
+    disapear.classList.remove("hidden");
+  }
 }
 
 window.addEventListener("scroll", getName);

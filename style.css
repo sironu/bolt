@@ -12,6 +12,13 @@ main {
     min-height: 10vh;
 }
 
+.none {
+    display: none;
+    overflow: hidden;
+
+}
+
+
 
 .top-card {
     position: fixed;
@@ -27,8 +34,7 @@ main {
 
 }
 
-.top-card
-img {
+.top-card img {
     border-radius: 0.94rem;
     width: 95%;
     margin: auto;
@@ -72,6 +78,7 @@ img {
     height: 2.8rem;
     width: 2.8rem;
 }
+
 .left-controls img {
     border-radius: 100%;
     height: 2rem;
@@ -101,8 +108,7 @@ img {
     padding: 0;
 }
 
-.map
-img {
+.map img {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -226,4 +232,34 @@ img {
     height: 0.3rem;
     border-radius: 0.625rem;
     background: #9da2aa;
+}
+
+.recenter {
+    width: 100%;
+    position: fixed;
+    bottom: 3.5rem;
+    margin: auto;
+    z-index: 20;
+    color: azure;
+}
+
+.recenterFlex {
+    width: fit-content;
+    border-radius: 4rem;
+    padding:  0.8rem 1.5rem;
+    background: #202938af;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.recenter i {
+    font-size: 1.6rem;
+    margin-right: 0.4rem;
+}
+
+.recenter span {
+    font-size: 1rem;
+    margin-bottom: 0.45rem;   
 }
