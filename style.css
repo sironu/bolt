@@ -80,18 +80,23 @@ main {
     z-index: 10;
 
 }
-.map{
+
+.map {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     margin: 0;
     padding: 0;
 }
-.map,img{
+
+.map,
+img {
     width: 100%;
+    margin: 0;
+    padding: 0;
+    height: auto;
 
 }
+
 /* =========================================================
    BOTTOM TRIP PANEL
 ========================================================= */
@@ -107,7 +112,7 @@ main {
     background: #202938;
     border-radius: 28px 28px 0 0;
     padding: 1.8rem 1rem;
-    box-shadow: 0 -4px 15px rgba(0,0,0,.15);
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, .15);
 }
 
 .drag-handle {
@@ -131,14 +136,16 @@ main {
 .trip-info {
     width: 98%;
 }
-.time-menu{
+
+.time-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
 }
 
-.time,.menu {
+.time,
+.menu {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -200,18 +207,22 @@ main {
     color: white;
     font-size: 1.5rem;
     font-weight: 700;
-    position: relative;
-    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    /* position: relative;
+    cursor: pointer; */
 }
 
-.arrived-arrow {
+/* .arrived-arrow {
     position: absolute;
     left: 25px;
     top: 27px;
     font-size: 1.5rem;
     line-height: 2.1rem;
     font-weight: 300;
-}
+} */
 
 
 
@@ -234,8 +245,3 @@ main {
     border-radius: 10px;
     background: #9da2aa;
 }
-
-
-
-
-
