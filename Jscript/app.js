@@ -3,28 +3,44 @@ const recenter = document.querySelector(".recenter");
 const changeState = document.querySelectorAll(".changeState");
 const subMenu = document.querySelector(".subMenu");
 const close = document.querySelector(".closeSubMenu");
-recenter.classList.add('none')
 
-onscroll = () => {
+
+window.onload = () => {
+  scrollTo({
+    top: 50,
+    behavior: "smooth"
+  })
+};
+
+
+
+window.onscroll = () => {
+  recenter.classList.remove('none')
   for (const data of changeState) {
     data.classList.add("none")
   }
-  recenter.classList.remove('none')
- 
+
+  clearFunc()
+
 };
+function clearFunc() {
+  setTimeout(() => {
+    recenter.classList.add('none')
+    block()
+  }, 4000);
 
-setInterval(() => {
-  block()
-  recenter.classList.add('none')
-
-}, 4000);
+}
 
 
 function block() {
-   for (const data of changeState) {
+  for (const data of changeState) {
     data.classList.remove("none")
   }
- 
+  scrollTo({
+    top: 50,
+    behavior: 'smooth'
+  });
+
 }
 recenter.addEventListener("click", block)
 
