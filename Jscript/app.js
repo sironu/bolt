@@ -1,11 +1,14 @@
+document.addEventListener("DOMContentLoaded", scroll)
 const menu = document.querySelector(".menu");
 const recenter = document.querySelector(".recenter");
 const changeState = document.querySelectorAll(".changeState");
 const subMenu = document.querySelector(".subMenu");
 const close = document.querySelector(".closeSubMenu");
 
+let scrollTimeOut;
 
-function block() {
+
+function displayBlock() {
   for (const data of changeState) {
     data.classList.remove("none")
   }
@@ -19,32 +22,35 @@ function scroll() {
 
 }
 
-// const timeoutId = setTimeout(() => {
-
-// }, 5000);
-
 
 
 window.addEventListener('scroll', () => {
+
+  clearTimeout(scrollTimeOut)
+
   recenter.classList.remove('none')
   for (const data of changeState) {
     data.classList.add("none")
   }
 
-  setTimeout(() => {
-    block()
+  scrollTimeOut = setTimeout(() => {
+    displayBlock()
     scroll()
     recenter.classList.add('none')
-
   }, 5000);
+
+
 
 });
 
 
 
 recenter.addEventListener("click", () => {
-  block()
+  clearTimeout(scrollTimeOut)
+  displayBlock()
 })
+
+
 
 
 // menu.addEventListener("click", () => {

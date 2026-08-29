@@ -5,6 +5,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+title {
+    color: transparent;
+}
+
+
 main {
     overflow: scroll;
     background: #111;
@@ -103,7 +108,7 @@ main {
 }
 
 .map {
-    width: 100%;
+    display: flex;
     margin: 0;
     padding: 0;
 }
@@ -216,6 +221,7 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 0.9rem;
+
 }
 
 /* =========================================================
@@ -246,7 +252,7 @@ main {
 .recenterFlex {
     width: fit-content;
     border-radius: 4rem;
-    padding:  0.8rem 1.5rem;
+    padding: 0.8rem 1.5rem;
     background: #202938af;
     display: flex;
     justify-content: center;
@@ -256,10 +262,10 @@ main {
 
 .recenter i {
     font-size: 1.6rem;
-    margin-right: 0.4rem;
+    margin-right: 0.15rem;
 }
 
 .recenter span {
     font-size: 1rem;
-    margin-bottom: 0.45rem;   
+    margin-bottom: 0.45rem;
 }
