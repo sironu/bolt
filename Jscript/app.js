@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", scroll)
+document.addEventListener("DOMContentLoaded", displayBlock)
 const menu = document.querySelector(".menu");
 const recenter = document.querySelector(".recenter");
 const changeState = document.querySelectorAll(".changeState");
@@ -34,8 +34,9 @@ window.addEventListener('scroll', () => {
   }
 
   scrollTimeOut = setTimeout(() => {
-    displayBlock()
     scroll()
+    displayBlock()
+
     recenter.classList.add('none')
   }, 5000);
 
