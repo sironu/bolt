@@ -10,8 +10,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
+
 <body>
-  <main>
+  <section id="sectionID">
+    <div>
+      <p>Enter Access Token</p>
+      <form id="tokenForm">
+        <input id="tokenInput" type="password" placeholder="Enter Subscription Token">
+        <button id="botton" class="submitToken">Enter</button>
+        <br>
+        <small id="tokenErr"></small>
+      </form>
+    </div>
+  </section>
+
+
+  <main id="mainID" hidden>
     <!-- Top Navigation Card -->
     <div class="top-card changeState">
       <img src="./Images/navigation.png" alt="Navigation Arrow">
@@ -107,8 +121,10 @@
     </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <script src="Jscript/app.js"></script>
-  <script src="./script.js"></script>
+  <script src="Jscript/app.js" defer></script>
+  <!-- <script src="./script.js"></script> -->
 </body>
 
 </html>
+
+
