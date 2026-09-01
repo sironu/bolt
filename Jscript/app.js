@@ -77,7 +77,7 @@ loginForm.addEventListener("submit", function (e) {
         // console.log(`Session expires in: ${days} days, ${hours} hours, ` +
         //   `${minutes} minutes, ${seconds} seconds`)
                 
-        // }
+}
 
 // Check every second
 setInterval(checkSession, 1000);
