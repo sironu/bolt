@@ -1,4 +1,3 @@
-
 const menu = document.querySelector(".menu");
 const recenter = document.querySelector(".recenter");
 const changeState = document.querySelectorAll(".changeState");
@@ -17,76 +16,87 @@ loginForm.addEventListener("submit", function (e) {
   let mainID = document.getElementById("mainID");
 
 
-
-
   if (accessToken === "12346") {
     localStorage.setItem("loggedIn", "true");
     localStorage.setItem("loginTime", Date.now());
-    // window.location.href = "logout.html"
-    
 
     sectionID.setAttribute("hidden", "hidden")
     mainID.removeAttribute("hidden")
 
-    const FIVE_MINUTES = 40320 * 60 * 1000;
+
+
+    // 30 days in milliseconds
+    const SESSION_DURATION = 30 * 24 * 60 * 60 * 1000;
+
+    // Check login status
+    if (localStorage.getItem("loggedIn") !== "true") {
+      mainID.setAttribute("hidden", "hidden")
+      sectionID.removeAttribute("hidden")
+    }
+
     // Get login time
     const loginTime = Number(localStorage.getItem("loginTime"));
 
-    // Calculate remaining time
-    const elapsedTime = Date.now() - loginTime;
-    const remainingTime = FIVE_MINUTES - elapsedTime;
-    console.log(remainingTime)
+    function checkSession() {
+
+      const currentTime = Date.now();
+
+      // Calculate how long the user has been logged in
+      const elapsedTime = currentTime - loginTime;
+
+      // Calculate remaining time
+      const remainingTime = SESSION_DURATION - elapsedTime;
+
+      // 30 days have passed
+      if (remainingTime <= 0) {
+        logout();
+        return;
+      }
+
+      // Convert milliseconds to days/hours/minutes/seconds
+      const days = Math.floor(
+        remainingTime / (1000 * 60 * 60 * 24)
+      );
+
+      const hours = Math.floor(
+        (remainingTime % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+      );
+
+      const minutes = Math.floor(
+        (remainingTime % (1000 * 60 * 60)) /
+        (1000 * 60)
+      );
+
+      const seconds = Math.floor(
+        (remainingTime % (1000 * 60)) /
+        1000
+      );
+
+      
+        // console.log(`Session expires in: ${days} days, ${hours} hours, ` +
+        //   `${minutes} minutes, ${seconds} seconds`)
+                
+        // }
+
+// Check every second
+setInterval(checkSession, 1000);
+
+// Check immediately
+checkSession();
 
 
-    if (remainingTime <= 0) {
-      logout();
-    } else {
-
-      // Automatically logout after remaining time
-      setTimeout(logout, remainingTime);
-
-      // Display countdown
-      updateTimer(remainingTime);
-    }
-
-
-    function updateTimer(time) {
-      const interval = setInterval(() => {
-        const loginTime = Number(localStorage.getItem("loginTime"));
-        const remaining = FIVE_MINUTES - (Date.now() - loginTime);
-
-        if (remaining <= 0) {
-          clearInterval(interval);
-          logout();
-          return;
-        }
-        const minutes = Math.floor(remaining / 60000);
-        const seconds = Math.floor((remaining % 60000) / 1000);
-      }, 1000);
-    }
-
-
-
-
-
-    function logout() {
-      localStorage.removeItem("loggedIn");
-      localStorage.removeItem("loginTime");
-
-      setTimeout(() => {
-        // window.location.href = "index.html"
-        mainID.setAttribute("hidden", "hidden")
-        sectionID.removeAttribute("hidden")
-
-      }, 1000);
-
-    }
-
-
-
+function logout() {
+  localStorage.removeItem("loggedIn");
+  localStorage.removeItem("loginTime");
+  setTimeout(() => {
+    mainID.setAttribute("hidden", "hidden")
+    sectionID.removeAttribute("hidden")
+  }, 1000);
+};
   } else {
-    tekenErr.textContent = "Invalid Token"
-  }
+  tekenErr.textContent = "Invalid Token"
+}
 });
 
 
