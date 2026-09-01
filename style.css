@@ -34,9 +34,6 @@ main {
     z-index: 10;
     width: 100%;
     margin: auto;
-
-
-
 }
 
 .top-card img {
@@ -44,10 +41,6 @@ main {
     width: 95%;
     margin: auto;
 }
-
-
-
-
 .left-controls {
     position: fixed;
     left: 1.25rem;
@@ -58,25 +51,7 @@ main {
     gap: 0.94rem;
     z-index: 10;
     background: transparent;
-
-
 }
-
-/* .left-controls button,
-.right-controls button {
-
-    cursor: pointer;
-    border: none;
-    outline: none;
-    border-radius: 100%;
-    object-fit: cover;
-    background: transparent;
-
-
-
-
-
-} */
 
 .right-controls img {
     border-radius: 100%;

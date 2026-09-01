@@ -16,7 +16,7 @@ function displayBlock() {
 
 function scroll() {
   scrollTo({
-    top: 50,
+    top: 0,
     behavior: 'smooth'
   });
 
@@ -63,27 +63,27 @@ recenter.addEventListener("click", () => {
 //   subMenu.classList.toggle("h-72");
 // });
 
-// const riders = [
-//   "Emmanuel ⭐ 5.0",
-//   "Max ⭐ 5.0",
-//   "Chinedu ⭐ 5.0",
-//   "Chukwuemeka ⭐ 5.0",
-//   "Ifeanyi ⭐ 5.0",
-//   "Okeke ⭐ 5.0",
-//   "Uche ⭐ 5.0",
-//   "Nwosu ⭐ 5.0",
-//   "Josephine ⭐ 5.0",
-//   "Joel ⭐ 5.0",
-//   "SSIB ⭐ 5.0",
-//   "Rex ⭐ 5.0",
-//   "Chioma ⭐ 5.0"
-// ];
-// let j = riders[Math.floor(Math.random() * riders.length)];
+const riders = [
+  "Emmanuel ⭐ 4.3",
+  "Max ⭐ 4.2",
+  "Chinedu ⭐ 4.2",
+  "Chukwuemeka ⭐ 4.3",
+  "Ifeanyi ⭐ 4.4",
+  "Okeke ⭐ 4.5",
+  "Uche ⭐ 4.6",
+  "Nwosu ⭐ 4.7",
+  "Josephine ⭐ 4.8",
+  "Joel ⭐ 4.9",
+  "SSIB ⭐ 5.0",
+  "Rex ⭐ 4.1",
+  "Chioma ⭐ 4.0"
+];
+let j = riders[Math.floor(Math.random() * riders.length)];
 
-// let rider1 = document.querySelector(".first-rider");
+let rider1 = document.querySelector(".first-rider");
 // let rider2 = document.querySelector(".seceond-rider");
 
-// rider1.innerHTML = j;
+rider1.innerHTML = j;
 // rider2.innerHTML = j;
 
 // const prices = [
