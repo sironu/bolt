@@ -35,9 +35,10 @@ window.addEventListener('scroll', () => {
 
   scrollTimeOut = setTimeout(() => {
     scroll()
-    displayBlock()
-
-    recenter.classList.add('none')
+    setTimeout(() => {
+      displayBlock()
+      recenter.classList.add('none')
+    }, 1000);
   }, 5000);
 
 
