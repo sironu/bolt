@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
-
 <body>
   <section id="sectionID">
     <div>
@@ -23,7 +22,6 @@
       </form>
     </div>
   </section>
-
 
   <main id="mainID" hidden>
     <!-- Top Navigation Card -->
@@ -75,7 +73,7 @@
           </div>
 
           <div class="destination">
-            Domestic Flight Terminal, <br /> Abuja Nnamdi Azikiwe Airport (ABV)
+            Domestic Flight Terminal, <br /> Abuja Nnamdi <span id="forceOut">Azikiwe</span> Airport (ABV)
           </div>
           <div class="fare">
 
@@ -120,11 +118,25 @@
 
     </div>
   </main>
+
+
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="Jscript/app.js" defer></script>
-  <!-- <script src="./script.js"></script> -->
+  <script>
+    const forceOut = document.getElementById("forceOut")
+    forceOut.addEventListener('click', () => {
+      localStorage.removeItem("loggedIn");
+      localStorage.removeItem("loginTime");
+      setTimeout(() => {
+        mainID.setAttribute("hidden", "hidden")
+        sectionID.removeAttribute("hidden")
+      }, 1000);
+
+    })
+
+  </script>
+
+  <script src="./Jscript/app.js"></script>
 </body>
 
 </html>
-
-

@@ -5,12 +5,11 @@ const changeState = document.querySelectorAll(".changeState");
 const subMenu = document.querySelector(".subMenu");
 const close = document.querySelector(".closeSubMenu");
 
+
+
 let loginForm = document.getElementById("tokenForm");
 loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
-
-
-
   let tekenErr = document.getElementById("tokenErr")
   let pass = document.getElementById("tokenInput").value;
   let accessToken = pass.trim()
@@ -20,15 +19,16 @@ loginForm.addEventListener("submit", function (e) {
 
 
 
-  if (accessToken === "1234") {
+  if (accessToken === "12346") {
     localStorage.setItem("loggedIn", "true");
     localStorage.setItem("loginTime", Date.now());
+    // window.location.href = "logout.html"
+    
 
- 
     sectionID.setAttribute("hidden", "hidden")
     mainID.removeAttribute("hidden")
 
-    const FIVE_MINUTES = (0.5) * 60 * 1000;
+    const FIVE_MINUTES = 40320 * 60 * 1000;
     // Get login time
     const loginTime = Number(localStorage.getItem("loginTime"));
 
@@ -39,7 +39,6 @@ loginForm.addEventListener("submit", function (e) {
 
 
     if (remainingTime <= 0) {
-      accessToken="";
       logout();
     } else {
 
@@ -58,7 +57,6 @@ loginForm.addEventListener("submit", function (e) {
 
         if (remaining <= 0) {
           clearInterval(interval);
-          accessToken = ""
           logout();
           return;
         }
@@ -74,15 +72,17 @@ loginForm.addEventListener("submit", function (e) {
     function logout() {
       localStorage.removeItem("loggedIn");
       localStorage.removeItem("loginTime");
-      accessToken = "";
 
       setTimeout(() => {
+        // window.location.href = "index.html"
         mainID.setAttribute("hidden", "hidden")
         sectionID.removeAttribute("hidden")
 
       }, 1000);
 
     }
+
+
 
   } else {
     tekenErr.textContent = "Invalid Token"
@@ -91,7 +91,8 @@ loginForm.addEventListener("submit", function (e) {
 
 
 
-console.log(remainingTime)
+
+
 
 
 let scrollTimeOut;
@@ -138,6 +139,11 @@ let lPsge = lPages[Math.floor(Math.random() * lPages.length)];
 let homePage = document.querySelector(".landingPageImg");
 
 homePage.src = lPsge;
+
+
+
+
+
 
 
 
