@@ -52,6 +52,18 @@ recenter.addEventListener("click", () => {
   displayBlock()
 })
 
+const lPages = [
+ "./Images/landingPage2.png",
+ "./Images/landingPage.png",
+ "./Images/landingPage3.png",
+ "./Images/landingPage4.png"
+];
+let lPsge = lPages[Math.floor(Math.random() * lPages.length)];
+
+let homePage = document.querySelector(".landingPageImg");
+
+homePage.src = lPsge;
+
 
 
 
