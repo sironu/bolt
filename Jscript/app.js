@@ -171,7 +171,7 @@ const ratingFlightPrices = [
   <div class="driver first-rider">
     Chioma ⭐ 5.0
   </div>`
-  
+
 ];
 let ratingFlightPrice = ratingFlightPrices[Math.floor(Math.random() * ratingFlightPrices.length)];
 
@@ -180,13 +180,40 @@ let ratingFlightPriceDiv = document.querySelector(".ratingFlightPriceDiv");
 ratingFlightPriceDiv.innerHTML = ratingFlightPrice;
 
 
-document.querySelector('.arrived-arrow-botton').addEventListener("dragleave", () => {
-  document.querySelector('.arrived-text').innerHTML="Start"
-  document.querySelector('.time').innerHTML="04:59"
-  
+
+
+
+document.querySelector('.arrived-arrow').addEventListener("click", () => {
+  document.querySelector('.arrived-text').innerHTML = "Start Trip"
+
+
+
+  let totalSeconds = 5 * 60; // 5 minutes in seconds
+  const display = document.querySelector('.time')
+  const countdown = setInterval(() => {
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+
+    // Format minutes and seconds with leading zeros
+    const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+    const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+
+    display.textContent = `${formattedMinutes}:${formattedSeconds}`;
+
+    if (totalSeconds <= 0) {
+      clearInterval(countdown);
+      display.textContent = "00:00";
+      // Add code here for when time expires
+    } else {
+      totalSeconds--;
+    }
+  }, 1000);
+
+
+
 });
 
-
+ondr
 
 
 
