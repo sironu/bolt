@@ -73,30 +73,30 @@ loginForm.addEventListener("submit", function (e) {
         1000
       );
 
-      
-        // console.log(`Session expires in: ${days} days, ${hours} hours, ` +
-        //   `${minutes} minutes, ${seconds} seconds`)
-                
-}
 
-// Check every second
-setInterval(checkSession, 1000);
+      // console.log(`Session expires in: ${days} days, ${hours} hours, ` +
+      //   `${minutes} minutes, ${seconds} seconds`)
 
-// Check immediately
-checkSession();
+    }
+
+    // Check every second
+    setInterval(checkSession, 1000);
+
+    // Check immediately
+    checkSession();
 
 
-function logout() {
-  localStorage.removeItem("loggedIn");
-  localStorage.removeItem("loginTime");
-  setTimeout(() => {
-    mainID.setAttribute("hidden", "hidden")
-    sectionID.removeAttribute("hidden")
-  }, 1000);
-};
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      localStorage.removeItem("loginTime");
+      setTimeout(() => {
+        mainID.setAttribute("hidden", "hidden")
+        sectionID.removeAttribute("hidden")
+      }, 1000);
+    };
   } else {
-  tekenErr.textContent = "Invalid Token"
-}
+    tekenErr.textContent = "Invalid Token"
+  }
 });
 
 
@@ -149,6 +149,45 @@ let lPsge = lPages[Math.floor(Math.random() * lPages.length)];
 let homePage = document.querySelector(".landingPageImg");
 
 homePage.src = lPsge;
+
+
+
+const ratingFlightPrices = [
+  `<div class="driver first-rider">
+    Chioma ⭐ 5.0
+  </div>
+
+  <div  style="color: white;">
+    <span class="old-price">₦20,319.77</span>
+    · ₦2,000.00 toll
+    · Net, tax incl.
+  </div>`,
+
+
+  `<div class="fare" >
+    Domestic Flights
+  </div>
+
+  <div class="driver first-rider">
+    Chioma ⭐ 5.0
+  </div>`
+  
+];
+let ratingFlightPrice = ratingFlightPrices[Math.floor(Math.random() * ratingFlightPrices.length)];
+
+let ratingFlightPriceDiv = document.querySelector(".ratingFlightPriceDiv");
+
+ratingFlightPriceDiv.innerHTML = ratingFlightPrice;
+
+
+document.querySelector('.arrived-arrow-botton').addEventListener("dragleave", () => {
+  document.querySelector('.arrived-text').innerHTML="Start"
+  document.querySelector('.time').innerHTML="04:59"
+  
+});
+
+
+
 
 
 

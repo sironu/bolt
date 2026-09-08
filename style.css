@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Tahoma", Helvetica, sans-serif;
 }
 
 title {
@@ -29,7 +29,6 @@ section div p{
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 1.6;
-    font-family: "Tahoma", Geneva, Verdana, sans-serif;
 }
 section div form small{
    text-align: center;
@@ -39,7 +38,6 @@ section div form small{
 section div form{
    margin: auto;
    width: 100%;
-   /* height: 100vh; */
    display: flex;
    justify-content: center;
    align-items: center;
@@ -51,7 +49,6 @@ section div form input{
 
     border: 3px solid green;
     outline: none;
-    /* border-radius: 5px; */
     padding: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -73,16 +70,10 @@ section div form button{
     height: auto;
     margin: auto;
 }
-
-
 .none {
     display: none;
     overflow: hidden;
-
 }
-
-
-
 .top-card {
     position: fixed;
     top: 0;
@@ -93,7 +84,6 @@ section div form button{
     width: 100%;
     margin: auto;
 }
-
 .top-card img {
     border-radius: 0.94rem;
     width: 95%;
@@ -213,10 +203,9 @@ section div form button{
 
 
 .driver {
-    margin-top: 0.5rem;
+    margin: 0.5rem 0;
     font-size: 1.2rem;
     color: white;
-    margin-left: 0.3rem;
 }
 
 .driver-rating {
@@ -245,19 +234,19 @@ section div form button{
    ARRIVED BUTTON
 ========================================================= */
 
-.arrived {
+.arrived-botton {
     width: 100%;
     margin-top: 1.2rem;
     border: none;
     border-radius: 0.7rem;
     background: #20a65e;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.9rem;
+    padding: 0.84rem;
 
 }
 
