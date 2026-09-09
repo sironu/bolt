@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <section id="sectionID">
+  <section id="sectionID" class="hidden">
     <div>
       <p>Enter Access Token</p>
       <form id="tokenForm">
@@ -23,7 +23,7 @@
     </div>
   </section>
 
-  <main id="mainID" hidden>
+  <main id="mainID" class="k">
     <!-- Top Navigation Card -->
     <div class="top-card changeState">
       <img src="./Images/navigation.png" alt="Navigation Arrow">
@@ -31,6 +31,7 @@
 
     <div class="map">
       <p>
+        <img class="destinationMap hidden" src="./Images/desImg.jpeg" alt="destination-Image">
         <img class="landingPageImg" src="./Images/landingPage2.png" alt="map-img">
         <img src="./Images/LpageImg2.png" alt="map-img">
         <img src="./Images/LpageImg1.png" alt="map-img">
@@ -67,56 +68,77 @@
 
           <div class="time-menu">
             <div class="time">
-              <1 min
+              <1 min </div>
+                <div class="arrivingTime hidden">
+                  <p style="margin: 0; padding: 0;">43 min </p>
+                  <small class="kilometer">43kms . <span class="realTime">12:33</span></small>
+                </div>
+
+                <div class="cashTrip">
+                  <div class="cash-Trip-Icon-container hidden">
+                    <img class="cash-Trip-Icon " src="./Images/cashTripIcon.jpeg" alt="cash-Trip-Icon">
+                  </div>
+                  <i class="fa-solid fa-list kebab menu "></i>
+                </div>
             </div>
-            <i class="fa-solid fa-list kebab menu"></i>
-          </div>
-          <div style="color: white; font-size:1.2rem; font-weight: 400;">
-            Domestic Flight Terminal, <br /> Abuja Nnamdi Azikiwe Airport (ABV)
+
+            <div class="destination-details Arrived-State">
+              <div style="color: white; font-size:1.2rem; font-weight: 400;">
+                Domestic Flight Terminal, <br /> Abuja Nnamdi Azikiwe Airport (ABV)
+              </div>
+
+              <div class="riderP hidden">
+                <div class="driver first-rider">
+                  Chioma ⭐ 5.0
+                </div>
+
+                <div style="color: white;">
+                  ₦<span class="old-price">20,319.77</span> · Net, tax incl.
+                </div>
+              </div>
+
+              <div class="ratingFlightPriceDiv" style="width: 100%;">
+                <div class="fare">
+                  Domestic Flights
+                </div>
+
+                <div class="driver first-rider">
+                  Chioma ⭐ 5.0
+                </div>
+              </div>
+            </div>
+            <div class="destination hidden">
+              Rhine Street, Abuja 904101
+            </div>
           </div>
 
-          <div class="ratingFlightPriceDiv" style="width: 100%;">
-            <div class="driver first-rider">
-              Chioma ⭐ 5.0
-            </div>
-
-            <div style="color: white; margin-top: 0.7rem;">
-              <span class="old-price">₦20,319.77</span>
-              · ₦2,000.00 toll
-              · Net, tax incl.
-            </div>
-          </div>
 
 
         </div>
 
-
+        <button class="arrived-botton">
+          <div draggable="true" class="">
+            <i class="arrived-arrow fa-solid fa-angles-right text-white"></i>
+          </div>
+          <p class="arrived-text" style="margin-right: 2.3rem;">Arrived</p>
+          <span class="arrived-span"></span>
+        </button>
 
       </div>
 
-      <button class="arrived-botton">
-        <div draggable="true"  class="">
-          <i class="arrived-arrow fa-solid fa-angles-right text-white"></i>
+      <div class="recenter none">
+        <div class="recenterFlex">
+          <i class="fa-solid fa-location-arrow fa-rotate-by" style="--fa-rotate-angle: -45deg;"></i>
+          <span>Recenter</span>
         </div>
-        <p class="arrived-text" style="margin-right: 2.3rem;">Arrived</p>
-        <span class="arrived-span"></span>
-      </button>
 
-    </div>
-
-    <div class="recenter none">
-      <div class="recenterFlex">
-        <i class="fa-solid fa-location-arrow fa-rotate-by" style="--fa-rotate-angle: -45deg;"></i>
-        <span>Recenter</span>
       </div>
-
-    </div>
   </main>
 
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="Jscript/app.js" defer></script>
-  <script>
+  <!-- <script>
     const forceOut = document.getElementById("forceOut")
     forceOut.addEventListener('click', () => {
       localStorage.removeItem("loggedIn");
@@ -128,7 +150,7 @@
 
     })
 
-  </script>
+  </script> -->
 </body>
 
 </html>

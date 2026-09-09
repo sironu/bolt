@@ -3,6 +3,16 @@ const recenter = document.querySelector(".recenter");
 const changeState = document.querySelectorAll(".changeState");
 const subMenu = document.querySelector(".subMenu");
 const close = document.querySelector(".closeSubMenu");
+const cashTripIcon = document.querySelector(".cash-Trip-Icon-container");
+const display = document.querySelector('.time')
+const destinationDetails = document.querySelector('.destination-details')
+const arrivingTime = document.querySelector('.arrivingTime')
+const destination = document.querySelector('.destination')
+const realTime = document.querySelector('.realTime')
+const homePage = document.querySelector(".landingPageImg");
+const destinationMap = document.querySelector('.destinationMap')
+
+// realTime = new Date().getdate()
 
 
 
@@ -20,8 +30,8 @@ loginForm.addEventListener("submit", function (e) {
     localStorage.setItem("loggedIn", "true");
     localStorage.setItem("loginTime", Date.now());
 
-    sectionID.setAttribute("hidden", "hidden")
-    mainID.removeAttribute("hidden")
+    sectionID.classList.add("hidden")
+    mainID.classList.remove("hidden")
 
 
 
@@ -30,8 +40,9 @@ loginForm.addEventListener("submit", function (e) {
 
     // Check login status
     if (localStorage.getItem("loggedIn") !== "true") {
-      mainID.setAttribute("hidden", "hidden")
-      sectionID.removeAttribute("hidden")
+      sectionID.classList.remove("hidden")
+      mainID.classList.add("hidden")
+
     }
 
     // Get login time
@@ -74,8 +85,8 @@ loginForm.addEventListener("submit", function (e) {
       );
 
 
-      // console.log(`Session expires in: ${days} days, ${hours} hours, ` +
-      //   `${minutes} minutes, ${seconds} seconds`)
+      console.log(`Session expires in: ${days} days, ${hours} hours, ` +
+        `${minutes} minutes, ${seconds} seconds`)
 
     }
 
@@ -138,82 +149,109 @@ recenter.addEventListener("click", () => {
 })
 document.addEventListener("DOMContentLoaded", displayBlock)
 
+const destinationMapImgs = [
+  "./Images/desImg.jpeg",
+  "./Images/desImg2.jpeg",
+ 
+  
+];
+let desHomePageImg = destinationMapImgs[Math.floor(Math.random() * destinationMapImgs.length)];
+destinationMap.src = desHomePageImg;
+
+
+document.querySelector('.arrived-botton').addEventListener("click", () => {
+  if (destinationDetails.classList.contains('Arrived-State')) {
+    const ratingFlightPriceDiv = document.querySelector(".ratingFlightPriceDiv");
+    ratingFlightPriceDiv.classList.add('hidden')
+    const riderP = document.querySelector(".riderP");
+    riderP.classList.remove('hidden')
+    destinationDetails.classList.add('Start-Trip')
+    destinationDetails.classList.remove('Arrived-State')
+    document.querySelector('.arrived-text').innerHTML = "Start Trip"
+    waiting()
+  } else if (destinationDetails.classList.contains('Start-Trip')) {
+    destinationDetails.classList.remove('Start-Trip')
+    destinationDetails.classList.add('End-Trip')
+    document.querySelector('.arrived-text').innerHTML = "End Trip"
+    document.querySelector('.arrived-botton').classList.add('red-bg')
+    startTrip()
+    
+  } else if (destinationDetails.classList.contains('End-Trip')) {
+    
+    destinationDetails.classList.remove('End-Trip')
+    destinationDetails.classList.add('collect-cash')
+
+
+  } else if (destinationDetails.classList.contains('collect-cash')) {
+
+
+    window.location.reload()
+
+  }
+
+});
+function waiting() {
+  let totalSeconds = 5 * 60; // 5 minutes in seconds
+  const countdown = setInterval(() => {
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+    const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+
+    if (totalSeconds <= 0) {
+      clearInterval(countdown);
+      paidWaiting()
+    } else {
+      totalSeconds--;
+      display.textContent = `${formattedMinutes}:${formattedSeconds} Waiting`;
+    }
+  }, 1000);
+
+}
+
+function paidWaiting() {
+  let paidTime = 0
+  const clearPaidInterval = setInterval(() => {
+    const minutes = Math.floor(paidTime / 60);
+    const seconds = paidTime % 60;
+    const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+    const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+    paidTime++;
+    display.textContent = `${formattedMinutes}:${formattedSeconds} Paid Waiting`;
+
+
+
+
+    // if (destinationDetails.classList.contains('End-Trip')) {
+    //   clearInterval(clearPaidInterval);
+    //   startTrip()
+    // } else {
+    //   paidTime++;
+    //   display.textContent = `${formattedMinutes}:${formattedSeconds} Paid Waiting`;
+
+    // }
+  }, 1000);
+
+}
+function startTrip() {
+  cashTripIcon.classList.remove('hidden')
+  arrivingTime.classList.remove('hidden') 
+  display.classList.add('hidden') 
+  destination.classList.remove('hidden')
+  destinationDetails.classList.add('hidden') 
+  homePage.classList.add('hidden')
+  destinationMap.classList.remove('hidden')
+
+}
 const lPages = [
   "./Images/landingPage2.png",
-  "./Images/landingPage.png",
   "./Images/landingPage3.png",
   "./Images/landingPage4.png"
 ];
 let lPsge = lPages[Math.floor(Math.random() * lPages.length)];
-
-let homePage = document.querySelector(".landingPageImg");
-
 homePage.src = lPsge;
 
 
-
-const ratingFlightPrices = [
-  `<div class="driver first-rider">
-    Chioma ⭐ 5.0
-  </div>
-
-  <div  style="color: white;">
-    <span class="old-price">₦20,319.77</span>
-    · ₦2,000.00 toll
-    · Net, tax incl.
-  </div>`,
-
-
-  `<div class="fare" >
-    Domestic Flights
-  </div>
-
-  <div class="driver first-rider">
-    Chioma ⭐ 5.0
-  </div>`
-
-];
-let ratingFlightPrice = ratingFlightPrices[Math.floor(Math.random() * ratingFlightPrices.length)];
-
-let ratingFlightPriceDiv = document.querySelector(".ratingFlightPriceDiv");
-
-ratingFlightPriceDiv.innerHTML = ratingFlightPrice;
-
-
-
-
-
-document.querySelector('.arrived-arrow').addEventListener("click", () => {
-  document.querySelector('.arrived-text').innerHTML = "Start Trip"
-
-
-
-  let totalSeconds = 5 * 60; // 5 minutes in seconds
-  const display = document.querySelector('.time')
-  const countdown = setInterval(() => {
-    const minutes = Math.floor(totalSeconds / 60);
-    const seconds = totalSeconds % 60;
-
-    // Format minutes and seconds with leading zeros
-    const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
-    const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
-
-    display.textContent = `${formattedMinutes}:${formattedSeconds}`;
-
-    if (totalSeconds <= 0) {
-      clearInterval(countdown);
-      display.textContent = "00:00";
-      // Add code here for when time expires
-    } else {
-      totalSeconds--;
-    }
-  }, 1000);
-
-
-
-});
-
-ondr
 
 
 
@@ -257,18 +295,18 @@ let rider1 = document.querySelector(".first-rider");
 rider1.innerHTML = j;
 // rider2.innerHTML = j;
 
-// const prices = [
-//   "14,034.89",
-//   "15,034.89",
-//   "16,034.89",
-//   "17,034.89",
-//   "18,034.89",
-//   "19,034.89",
-//   "20,034.89",
-// ];
+const prices = [
+  "14,034.89",
+  "15,034.89",
+  "16,034.89",
+  "17,034.89",
+  "18,034.89",
+  "19,034.89",
+  "20,034.89",
+];
 
-// let priceContainers = document.querySelector(".price-container");
-// priceContainers.innerHTML = prices[Math.floor(Math.random() * prices.length)];
+let riderPrice = document.querySelector(".old-price");
+riderPrice.innerHTML = prices[Math.floor(Math.random() * prices.length)];
 
 
 
