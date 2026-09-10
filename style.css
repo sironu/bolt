@@ -268,6 +268,7 @@ section div form button {
     position: absolute;
 
 }
+
 .arrivingRealTime {
     font-size: 0.6rem;
     color: #9da2aa;
@@ -393,3 +394,93 @@ section div form button {
     height: 1.4rem;
     border-radius: 0.25rem;
 }
+
+
+
+.sheet{
+position:fixed;
+left:0;
+bottom:0;
+width:100%;
+background:#2e3440;
+border-radius:25px 25px 0 0;
+padding:18px;
+color:white;
+z-index:100;
+
+}
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.header button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #404857;
+    color: white;
+    font-size: 20px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 0;
+    font-size: 22px;
+}
+
+.item h3 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.item p {
+    font-size: 15px;
+    color: #ddd;
+}
+
+.red {
+    color: #ff5b7f;
+}
+
+.cancel {
+    color: #ff6b81;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.item a {
+    margin-left: auto;
+    text-decoration: none;
+    color: #bbb;
+}
+
+.stop {
+    display: block;
+    width: 85%;
+    margin: 25px auto 10px;
+    padding: 18px;
+    border: none;
+    background: #48515e;
+    color: white;
+    border-radius: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.stop i {
+    margin-right: 12px;
+}
+

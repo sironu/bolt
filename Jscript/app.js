@@ -149,7 +149,10 @@ recenter.addEventListener("click", () => {
   clearTimeout(scrollTimeOut)
   displayBlock()
 })
-document.addEventListener("DOMContentLoaded", displayBlock)
+document.addEventListener("DOMContentLoaded", () => { 
+  displayBlock()
+  sheet.style.transform = "translateY(100%)";
+ })
 
 const destinationMapImgs = [
   "./Images/desImg.jpeg",
@@ -221,17 +224,6 @@ function paidWaiting() {
     paidTime++;
     display.textContent = `${formattedMinutes}:${formattedSeconds} Paid Waiting`;
 
-
-
-
-    // if (destinationDetails.classList.contains('End-Trip')) {
-    //   clearInterval(clearPaidInterval);
-    //   startTrip()
-    // } else {
-    //   paidTime++;
-    //   display.textContent = `${formattedMinutes}:${formattedSeconds} Paid Waiting`;
-
-    // }
   }, 1000);
 
 }
@@ -255,13 +247,7 @@ homePage.src = lPsge;
 
 
 
-// menu.addEventListener("click", () => {
-//   subMenu.classList.toggle("h-72");
-// });
 
-// close.addEventListener("click", () => {
-//   subMenu.classList.toggle("h-72");
-// });
 
 
 const ratingPoints = [
@@ -296,11 +282,10 @@ function dispTime() {
 
   const currentTime = `${hours}:${minutes}`;
 
-  // console.log(currentTime);
-  document.querySelector('.realTime').innerHTML=currentTime
-  document.querySelector('.realTime2').innerHTML=currentTime
-  
-  // Output example: "14:05:09"
+
+  document.querySelector('.realTime').innerHTML = currentTime
+  document.querySelector('.realTime2').innerHTML = currentTime
+
 
 }
 dispTime()
@@ -317,9 +302,7 @@ const kilos = [
 ];
 
 let kiloValue = kilos[Math.floor(Math.random() * kilos.length)];
-document.querySelector('.dist-meter').innerHTML=kiloValue
-
-// console.log(kiloValue)
+document.querySelector('.dist-meter').innerHTML = kiloValue
 const distanceTimes = [
   "33",
   "42",
@@ -333,15 +316,7 @@ const distanceTimes = [
 ];
 
 let distanceTime = distanceTimes[Math.floor(Math.random() * distanceTimes.length)];
-document.querySelector('.distanceTime').innerHTML=distanceTime
-// console.log(kiloValue)
-
-
-
-
-// for (const pointValue of pointValues) {
-//   ratingPoint.innerHTML = pointValue
-// }
+document.querySelector('.distanceTime').innerHTML = distanceTime
 
 const riders = [
   "Emmanuel",
@@ -379,54 +354,67 @@ const prices = [
 let riderPrice = document.querySelector(".old-price");
 riderPrice.innerHTML = prices[Math.floor(Math.random() * prices.length)];
 
+const streets = [
 
-
-// function getName() {
-//   let disapear = document.querySelector(".disapear");
-
-//   if (scrollY > 150) {
-
-//     disapear.classList.add("hidden");
-//   } else {
-//     disapear.classList.remove("hidden");
-//   }
-// }
-
-// window.addEventListener("scroll", getName);
-
-const streets =[
-
-"Adzope Crescent",
-"Agadez Cres",
-"Ajesa St",
-"Atabara St",
-"Bangui St",
-"Beira Cres",
-"Blantyre Cres",
-"Boke Street",
-"Buchanan Cres",
-"Cairo Cres",
-"Casablanca St",
-"Dar-Es-Salam St",
-"Djibouti Cl",
-"Djibouti Street",
-"Durban St",
-"Freetown St",
-"Hombari Cres",
-"Katampe Rd",
-"Kudang St",
-"Kumasi Cres",
-"Lambarene Close",
-"Lobito Cres",
-"Madiana Close",
-"Nairobi St",
-"Ndjamena Cres",
-"Port-Novo St",
-"Udi Hill Cl",
-"Victoria Garden Cl",
-"Yalinga Street",
-"Youkou St",
+  "Adzope Crescent",
+  "Agadez Cres",
+  "Ajesa St",
+  "Atabara St",
+  "Bangui St",
+  "Beira Cres",
+  "Blantyre Cres",
+  "Boke Street",
+  "Buchanan Cres",
+  "Cairo Cres",
+  "Casablanca St",
+  "Dar-Es-Salam St",
+  "Djibouti Cl",
+  "Djibouti Street",
+  "Durban St",
+  "Freetown St",
+  "Hombari Cres",
+  "Katampe Rd",
+  "Kudang St",
+  "Kumasi Cres",
+  "Lambarene Close",
+  "Lobito Cres",
+  "Madiana Close",
+  "Nairobi St",
+  "Ndjamena Cres",
+  "Port-Novo St",
+  "Udi Hill Cl",
+  "Victoria Garden Cl",
+  "Yalinga Street",
+  "Youkou St",
 
 ]
 
-document.querySelector('.street').innerHTML= streets[Math.floor(Math.random() * streets.length)];
+document.querySelector('.street').innerHTML = streets[Math.floor(Math.random() * streets.length)];
+
+const menuBtn = document.querySelector(".menuBtnn");
+const closeBtn = document.querySelector(".close");
+const sheet = document.querySelector(".sheet");
+
+menuBtn.addEventListener("click", () => {
+  sheet.style.transform = "translateY(0%)";
+});
+
+closeBtn.addEventListener("click", () => {
+  sheet.style.transform = "translateY(100%)";
+});
+
+
+
+
+
+// closeBtn.onclick = () => {
+
+//     sheet.style.transform = "translateY(100%)";
+
+//     setTimeout(() => {
+
+//         sheet.style.transform = "translateY(0)";
+
+//     },10000);
+
+// };
