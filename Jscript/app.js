@@ -11,10 +11,7 @@ const destination = document.querySelector('.destination')
 const realTime = document.querySelector('.realTime')
 const homePage = document.querySelector(".landingPageImg");
 const destinationMap = document.querySelector('.destinationMap')
-const realTimeDestination = document.querySelectorAll('.realTimeDestination')
-
-
-// realTime = new Date().getdate()
+const realTimeDestination = document.querySelector('#temo')
 
 
 
@@ -227,6 +224,44 @@ function paidWaiting() {
   }, 1000);
 
 }
+const streets = [
+
+  "Adzope Crescent, Abuja 904101",
+  "Agadez Cres, Abuja 904101",
+  "Ajesa St, Abuja 904101",
+  "Atabara St, Abuja 904101",
+  "Bangui St, Abuja 904101",
+  "Beira Cres, Abuja 904101",
+  "Blantyre Cres, Abuja 904101",
+  "Boke Street, Abuja 904101",
+  "Buchanan Cres, Abuja 904101",
+  "Cairo Cres, Abuja 904101",
+  "Casablanca St, Abuja 904101",
+  "Dar-Es-Salam St, Abuja 904101",
+  "Djibouti Cl, Abuja 904101",
+  "Djibouti Street, Abuja 904101",
+  "Durban St, Abuja 904101",
+  "Freetown St, Abuja 904101",
+  "Hombari Cres, Abuja 904101",
+  "Katampe Rd, Abuja 904101",
+  "Kudang St, Abuja 904101",
+  "Kumasi Cres, Abuja 904101",
+  "Lambarene Close, Abuja 904101",
+  "Lobito Cres, Abuja 904101",
+  "Madiana Close, Abuja 904101",
+  "Nairobi St, Abuja 904101",
+  "Ndjamena Cres, Abuja 904101",
+  "Port-Novo St, Abuja 904101",
+  "Udi Hill Cl, Abuja 904101",
+  "Victoria Garden Cl, Abuja 904101",
+  "Yalinga Street, Abuja 904101",
+  "Youkou St, Abuja 904101",
+
+]
+const currentDestination = streets[Math.floor(Math.random() * streets.length)];
+
+document.querySelector('.street').innerHTML = currentDestination;
+
 function startTrip() {
   cashTripIcon.classList.remove('hidden')
   arrivingTime.classList.remove('hidden')
@@ -236,6 +271,7 @@ function startTrip() {
   homePage.classList.add('hidden')
   destinationMap.classList.remove('hidden')
   realTimeDestination.innerHTML = currentDestination
+  console.log(currentDestination)
 
 }
 const lPages = [
@@ -355,43 +391,7 @@ const prices = [
 let riderPrice = document.querySelector(".old-price");
 riderPrice.innerHTML = prices[Math.floor(Math.random() * prices.length)];
 
-const streets = [
 
-  "Adzope Crescent",
-  "Agadez Cres",
-  "Ajesa St",
-  "Atabara St",
-  "Bangui St",
-  "Beira Cres",
-  "Blantyre Cres",
-  "Boke Street",
-  "Buchanan Cres",
-  "Cairo Cres",
-  "Casablanca St",
-  "Dar-Es-Salam St",
-  "Djibouti Cl",
-  "Djibouti Street",
-  "Durban St",
-  "Freetown St",
-  "Hombari Cres",
-  "Katampe Rd",
-  "Kudang St",
-  "Kumasi Cres",
-  "Lambarene Close",
-  "Lobito Cres",
-  "Madiana Close",
-  "Nairobi St",
-  "Ndjamena Cres",
-  "Port-Novo St",
-  "Udi Hill Cl",
-  "Victoria Garden Cl",
-  "Yalinga Street",
-  "Youkou St",
-
-]
-const currentDestination = streets[Math.floor(Math.random() * streets.length)];
-
-document.querySelector('.street').innerHTML = currentDestination;
 
 const menuBtn = document.querySelector(".menuBtnn");
 const closeBtn = document.querySelector(".close");
@@ -405,18 +405,3 @@ closeBtn.addEventListener("click", () => {
   sheet.style.transform = "translateY(100%)";
 });
 
-
-
-
-
-// closeBtn.onclick = () => {
-
-//     sheet.style.transform = "translateY(100%)";
-
-//     setTimeout(() => {
-
-//         sheet.style.transform = "translateY(0)";
-
-//     },10000);
-
-// };
