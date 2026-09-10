@@ -11,7 +11,7 @@ const destination = document.querySelector('.destination')
 const realTime = document.querySelector('.realTime')
 const homePage = document.querySelector(".landingPageImg");
 const destinationMap = document.querySelector('.destinationMap')
-// const ratingPoint = document.querySelectorAll('.rating-point')
+const realTimeDestination = document.querySelectorAll('.realTimeDestination')
 
 
 // realTime = new Date().getdate()
@@ -235,6 +235,7 @@ function startTrip() {
   destinationDetails.classList.add('hidden')
   homePage.classList.add('hidden')
   destinationMap.classList.remove('hidden')
+  realTimeDestination.innerHTML = currentDestination
 
 }
 const lPages = [
@@ -335,11 +336,11 @@ const riders = [
 ];
 let j = riders[Math.floor(Math.random() * riders.length)];
 
-let rider1 = document.querySelector(".first-rider");
-// let rider2 = document.querySelector(".seceond-rider");
+let rider1 = document.querySelector(".contact1");
+let rider2 = document.querySelector(".contact2");
 
 rider1.innerHTML = j;
-// rider2.innerHTML = j;
+rider2.innerHTML = j;
 
 const prices = [
   "14,034.89",
@@ -388,8 +389,9 @@ const streets = [
   "Youkou St",
 
 ]
+const currentDestination = streets[Math.floor(Math.random() * streets.length)];
 
-document.querySelector('.street').innerHTML = streets[Math.floor(Math.random() * streets.length)];
+document.querySelector('.street').innerHTML = currentDestination;
 
 const menuBtn = document.querySelector(".menuBtnn");
 const closeBtn = document.querySelector(".close");
