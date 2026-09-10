@@ -154,8 +154,8 @@ document.addEventListener("DOMContentLoaded", displayBlock)
 const destinationMapImgs = [
   "./Images/desImg.jpeg",
   "./Images/desImg2.jpeg",
- 
-  
+
+
 ];
 let desHomePageImg = destinationMapImgs[Math.floor(Math.random() * destinationMapImgs.length)];
 destinationMap.src = desHomePageImg;
@@ -177,9 +177,9 @@ document.querySelector('.arrived-botton').addEventListener("click", () => {
     document.querySelector('.arrived-text').innerHTML = "End Trip"
     document.querySelector('.arrived-botton').classList.add('red-bg')
     startTrip()
-    
+
   } else if (destinationDetails.classList.contains('End-Trip')) {
-    
+
     destinationDetails.classList.remove('End-Trip')
     destinationDetails.classList.add('collect-cash')
 
@@ -237,10 +237,10 @@ function paidWaiting() {
 }
 function startTrip() {
   cashTripIcon.classList.remove('hidden')
-  arrivingTime.classList.remove('hidden') 
-  display.classList.add('hidden') 
+  arrivingTime.classList.remove('hidden')
+  display.classList.add('hidden')
   destination.classList.remove('hidden')
-  destinationDetails.classList.add('hidden') 
+  destinationDetails.classList.add('hidden')
   homePage.classList.add('hidden')
   destinationMap.classList.remove('hidden')
 
@@ -282,10 +282,61 @@ const ratingPoints = [
 let pointValues = ratingPoints[Math.floor(Math.random() * ratingPoints.length)];
 const ratingPoint1 = document.querySelector('#rating-point-1')
 const ratingPoint2 = document.querySelector('#rating-point-2')
-console.log(pointValues)
+ratingPoint1.innerHTML = pointValues
+ratingPoint2.innerHTML = pointValues
 
-ratingPoint1.innerHTML=pointValues
-ratingPoint2.innerHTML=pointValues
+
+
+function dispTime() {
+  const now = new Date();
+  // Extract hours, minutes, and seconds
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  // const seconds = String(now.getSeconds()).padStart(2, '0');
+
+  const currentTime = `${hours}:${minutes}`;
+
+  // console.log(currentTime);
+  document.querySelector('.realTime').innerHTML=currentTime
+  
+  // Output example: "14:05:09"
+
+}
+dispTime()
+const kilos = [
+  "41km",
+  "42km",
+  "43km",
+  "44km",
+  "45km",
+  "36km",
+  "37km",
+  "38km",
+  "39km"
+];
+
+let kiloValue = kilos[Math.floor(Math.random() * kilos.length)];
+document.querySelector('.dist-meter').innerHTML=kiloValue
+
+// console.log(kiloValue)
+const distanceTimes = [
+  "33",
+  "42",
+  "43",
+  "44",
+  "45",
+  "36",
+  "37",
+  "38",
+  "39"
+];
+
+let distanceTime = distanceTimes[Math.floor(Math.random() * distanceTimes.length)];
+document.querySelector('.distanceTime').innerHTML=distanceTime
+// console.log(kiloValue)
+
+
+
 
 // for (const pointValue of pointValues) {
 //   ratingPoint.innerHTML = pointValue
@@ -342,5 +393,39 @@ riderPrice.innerHTML = prices[Math.floor(Math.random() * prices.length)];
 
 // window.addEventListener("scroll", getName);
 
+const streets =[
 
+"Adzope Crescent",
+"Agadez Cres",
+"Ajesa St",
+"Atabara St",
+"Bangui St",
+"Beira Cres",
+"Blantyre Cres",
+"Boke Street",
+"Buchanan Cres",
+"Cairo Cres",
+"Casablanca St",
+"Dar-Es-Salam St",
+"Djibouti Cl",
+"Djibouti Street",
+"Durban St",
+"Freetown St",
+"Hombari Cres",
+"Katampe Rd",
+"Kudang St",
+"Kumasi Cres",
+"Lambarene Close",
+"Lobito Cres",
+"Madiana Close",
+"Nairobi St",
+"Ndjamena Cres",
+"Port-Novo St",
+"Udi Hill Cl",
+"Victoria Garden Cl",
+"Yalinga Street",
+"Youkou St",
 
+]
+
+document.querySelector('.street').innerHTML= streets[Math.floor(Math.random() * streets.length)];
