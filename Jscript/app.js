@@ -298,6 +298,7 @@ function dispTime() {
 
   // console.log(currentTime);
   document.querySelector('.realTime').innerHTML=currentTime
+  document.querySelector('.realTime2').innerHTML=currentTime
   
   // Output example: "14:05:09"
 
