@@ -11,6 +11,8 @@ const destination = document.querySelector('.destination')
 const realTime = document.querySelector('.realTime')
 const homePage = document.querySelector(".landingPageImg");
 const destinationMap = document.querySelector('.destinationMap')
+// const ratingPoint = document.querySelectorAll('.rating-point')
+
 
 // realTime = new Date().getdate()
 
@@ -253,17 +255,6 @@ homePage.src = lPsge;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // menu.addEventListener("click", () => {
 //   subMenu.classList.toggle("h-72");
 // });
@@ -272,20 +263,48 @@ homePage.src = lPsge;
 //   subMenu.classList.toggle("h-72");
 // });
 
+
+const ratingPoints = [
+  "4.1",
+  "4.2",
+  "4.3",
+  "4.4",
+  "4.5",
+  "4.6",
+  "4.7",
+  "4.8",
+  "4.9",
+  "3.6",
+  "3.7",
+  "3.8",
+  "3.9"
+];
+let pointValues = ratingPoints[Math.floor(Math.random() * ratingPoints.length)];
+const ratingPoint1 = document.querySelector('#rating-point-1')
+const ratingPoint2 = document.querySelector('#rating-point-2')
+console.log(pointValues)
+
+ratingPoint1.innerHTML=pointValues
+ratingPoint2.innerHTML=pointValues
+
+// for (const pointValue of pointValues) {
+//   ratingPoint.innerHTML = pointValue
+// }
+
 const riders = [
-  "Emmanuel ⭐ 4.3",
-  "Max ⭐ 4.2",
-  "Chinedu ⭐ 4.2",
-  "Chukwuemeka ⭐ 4.3",
-  "Ifeanyi ⭐ 4.4",
-  "Okeke ⭐ 4.5",
-  "Uche ⭐ 4.6",
-  "Nwosu ⭐ 4.7",
-  "Josephine ⭐ 4.8",
-  "Joel ⭐ 4.9",
-  "SSIB ⭐ 5.0",
-  "Rex ⭐ 4.1",
-  "Chioma ⭐ 4.0"
+  "Emmanuel",
+  "Max",
+  "Chinedu",
+  "Chukwuemeka",
+  "Ifeanyi",
+  "Okeke",
+  "Uche",
+  "Nwosu",
+  "Josephine",
+  "Joel",
+  "SSIB",
+  "Rex",
+  "Chioma"
 ];
 let j = riders[Math.floor(Math.random() * riders.length)];
 

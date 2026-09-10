@@ -16,7 +16,8 @@ main {
     width: 100%;
     min-height: 10vh;
 }
-section{
+
+section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,26 +25,30 @@ section{
     height: 100vh;
     margin: auto;
 }
-section div p{
+
+section div p {
     text-align: center;
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 1.6;
 }
-section div form small{
-   text-align: center;
-   color: red;
-   font-size: 1rem;
+
+section div form small {
+    text-align: center;
+    color: red;
+    font-size: 1rem;
 }
-section div form{
-   margin: auto;
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+
+section div form {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-section div form input{
+
+section div form input {
     width: 90%;
     margin: 0;
 
@@ -52,28 +57,32 @@ section div form input{
     padding: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    
+
 }
-section div form button{
+
+section div form button {
     border: 3px solid green;
-   padding: 10px;
-   width: 90%;
-   border: none;
-   outline: none;
-   background: green;
-   color: white;
+    padding: 10px;
+    width: 90%;
+    border: none;
+    outline: none;
+    background: green;
+    color: white;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-#formInput{
+
+#formInput {
     width: 95%;
     height: auto;
     margin: auto;
 }
+
 .none {
     display: none;
     overflow: hidden;
 }
+
 .top-card {
     position: fixed;
     top: 0;
@@ -84,11 +93,13 @@ section div form button{
     width: 100%;
     margin: auto;
 }
+
 .top-card img {
     border-radius: 0.94rem;
     width: 95%;
     margin: auto;
 }
+
 .left-controls {
     position: fixed;
     left: 1.25rem;
@@ -113,8 +124,6 @@ section div form button{
     width: 2rem;
 }
 
-
-
 .right-controls {
     position: fixed;
     background: transparent;
@@ -124,10 +133,7 @@ section div form button{
     display: flex;
     flex-direction: column;
     gap: 0.94rem;
-
-
     z-index: 10;
-
 }
 
 .map {
@@ -142,11 +148,13 @@ section div form button{
     padding: 0;
 
 }
-.landingPageImg{
+
+.landingPageImg {
     height: 100vh;
     width: 100vw;
 }
-.destinationMap{
+
+.destinationMap {
     height: 100vh;
     width: 100vw;
 }
@@ -205,12 +213,6 @@ section div form button{
     margin-top: 0.19rem;
 }
 
-
-.driver {
-    margin: 0.5rem 0;
-    font-size: 1.2rem;
-    color: white;
-}
 .arrivingTime {
     font-weight: 600;
     line-height: 1.6;
@@ -218,25 +220,52 @@ section div form button{
     color: white;
     margin: 0 0 2rem 0;
 }
-.destination{
+
+.destination {
     margin: 0;
     padding: 0;
     line-height: 1.6;
     font-size: 1.2rem;
     color: white;
 }
+
+.driver {
+    margin: 0.5rem 0rem;
+    font-size: 1.2rem;
+    color: white;
+    display: flex;
+
+}
+
+.driver-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+
+}
+
 .driver-rating {
     color: #ffc11b;
     font-weight: 600;
+    font-size: 1rem;
 }
-.kilometer{
+
+.rating-point {
+    color: #ffc11b;
+    font-size: 1rem;
+
+}
+
+.kilometer {
     font-size: 0.6rem;
     color: #9da2aa;
     padding: 0;
     margin: 0;
     line-height: 1.6;
     position: absolute;
-    
+
 }
 
 .fare {
@@ -275,7 +304,8 @@ section div form button{
     padding: 0.84rem;
 
 }
-.red-bg{
+
+.red-bg {
     background-color: red;
 }
 
@@ -324,24 +354,29 @@ section div form button{
     font-size: 1rem;
     margin-bottom: 0.45rem;
 }
-.visible{
+
+.visible {
     display: block;
 }
-.hidden{
+
+.hidden {
     display: none;
     overflow: hidden;
 }
-.cashTrip{
+
+.cashTrip {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
-.cash-Trip-Icon-container{
+
+.cash-Trip-Icon-container {
     margin: 0 0.5rem 1rem 0.5rem;
 
 }
-.cash-Trip-Icon-container img{
+
+.cash-Trip-Icon-container img {
     width: 2rem;
     height: 1.4rem;
     border-radius: 0.25rem;
