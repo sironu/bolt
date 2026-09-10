@@ -233,7 +233,7 @@ section div form button {
     margin: 0.5rem 0rem;
     font-size: 1.2rem;
     color: white;
-    display: flex;
+    /* display: flex; */
 
 }
 
@@ -243,18 +243,19 @@ section div form button {
     align-items: center;
     gap: 0.5rem;
     width: fit-content;
+    font-size: 1.2rem;
 
 }
 
 .driver-rating {
     color: #ffc11b;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.79rem;
 }
 
 .rating-point {
     color: #ffc11b;
-    font-size: 1rem;
+    font-size: 1.1rem;
 
 }
 
