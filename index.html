@@ -11,18 +11,6 @@
 </head>
 
 <body>
-  <section id="sectionID" class="hidden">
-    <div>
-      <p>Enter Access Token</p>
-      <form id="tokenForm">
-        <input id="tokenInput" type="password" placeholder="Enter Subscription Token">
-        <button id="botton" class="submitToken">Enter</button>
-        <br>
-        <small id="tokenErr"></small>
-      </form>
-    </div>
-  </section>
-
   <main id="mainID" class="k">
     <!-- Top Navigation Card -->
     <div class="top-card changeState">
@@ -199,20 +187,85 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script>
+
+        // 30 days in milliseconds
+        const SESSION_DURATION = 30 * 24 * 60 * 60 * 1000;
+        
+
+        // Check login status
+        if (localStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "login.html";
+        }
+
+        // Get login time
+        const loginTime = Number(localStorage.getItem("loginTime"));
+
+        function checkSession() {
+
+            const currentTime = Date.now();
+
+            // Calculate how long the user has been logged in
+            const elapsedTime = currentTime - loginTime;
+
+            // Calculate remaining time
+            const remainingTime = SESSION_DURATION - elapsedTime;
+
+            // 30 days have passed
+            if (remainingTime <= 0) {
+                logout();
+                return;
+            }
+
+            // Convert milliseconds to days/hours/minutes/seconds
+            const days = Math.floor(
+                remainingTime / (1000 * 60 * 60 * 24)
+            );
+
+            const hours = Math.floor(
+                (remainingTime % (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60)
+            );
+
+            const minutes = Math.floor(
+                (remainingTime % (1000 * 60 * 60)) /
+                (1000 * 60)
+            );
+
+            const seconds = Math.floor(
+                (remainingTime % (1000 * 60)) /
+                1000
+            );
+
+            // document.getElementById("countdown").textContent =
+            //     `Session expires in: ${days} days, ${hours} hours, ` +
+            //     `${minutes} minutes, ${seconds} seconds`;
+        }
+
+        // Check every second
+        setInterval(checkSession, 1000);
+
+        // Check immediately
+        checkSession();
+
+        function logout() {
+
+            // Remove login information
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("loginTime");
+
+            // Redirect to login
+            window.location.href = "login.html";
+        }
+
+    </script>
+
   <script src="Jscript/app.js" defer></script>
-  <!-- <script>
-    const forceOut = document.getElementById("forceOut")
-    forceOut.addEventListener('click', () => {
-      localStorage.removeItem("loggedIn");
-      localStorage.removeItem("loginTime");
-      setTimeout(() => {
-        mainID.setAttribute("hidden", "hidden")
-        sectionID.removeAttribute("hidden")
-      }, 1000);
-
-    })
-
-  </script> -->
+  
 </body>
 
 </html>
+
+
+
+

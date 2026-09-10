@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <section id="sectionID">
+    <div>
+      <p>Enter Access Token</p>
+      <form id="tokenForm">
+        <input id="tokenInput" type="password" placeholder="Enter Subscription Token">
+        <button id="botton" class="submitToken">Enter</button>
+        <br>
+        <small id="tokenErr"></small>
+      </form>
+    </div>
+  </section>
+
+ <script>
+    let loginForm = document.getElementById("tokenForm");
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let tekenErr = document.getElementById("tokenErr")
+      let pass = document.getElementById("tokenInput").value;
+
+      // const username = document.getElementById("username").value;
+      // const password = document.getElementById("password").value;
+
+      // Example credentials
+      if (pass === "12346") {
+
+        // Save login status
+        localStorage.setItem("loggedIn", "true");
+
+        // Save the exact time the user logged in
+        localStorage.setItem("loginTime", Date.now());
+
+        // Go to dashboard
+        window.location.href = "index.html";
+
+      } else {
+        tekenErr.textContent = "Invalid Token"
+      }
+    });
+
+
+
+
+  </script>
+
+
+
+</body>
+
+</html>
